@@ -23,56 +23,59 @@
 ## Feature List
 
 ### 1. Input Handling
-    - [ ] Purchase Amount Input
-      - [ ] Prompt user for the purchase amount
-      - [ ] Verify it is a positive number divisible by 1000
-      - [ ] Throw exception for invalid input (negative, zero, non-numeric, less than 1000)
-    - [ ] Winning Numbers Input
-      - [ ] Prompt user for 6 comma-separated numbers
-      - [ ] Verify all numbers are in range 1-45 and not duplicated
-      - [ ] Throw exception for invalid format (empty, blank, more, less)
-      - [ ] Throw exception for invalid input (negative, zero, non-numeric)
-    - [ ] Bonus Number Input
-      - [ ] Prompt user for 1 number
-      - [ ] Verify the number is in range 1-45 and not duplicated from the winning numbers
-      - [ ] Throw exception for invalid input (negative, zero, non-numeric)
+- [ ] Purchase Amount Input
+  - [ ] Prompt user for the purchase amount
+  - [ ] Verify it is a positive number divisible by 1000
+  - [ ] Throw exception for invalid input (negative, zero, non-numeric, less than 1000)
+- [ ] Winning Numbers Input
+  - [ ] Prompt user for 6 comma-separated numbers
+  - [ ] Verify all numbers are in range 1-45 and not duplicated
+  - [ ] Throw exception for invalid format (empty, blank, more, less)
+  - [ ] Throw exception for invalid input (negative, zero, non-numeric)
+- [ ] Bonus Number Input
+  - [ ] Prompt user for 1 number
+  - [ ] Verify the number is in range 1-45 and not duplicated from the winning numbers
+  - [ ] Throw exception for invalid input (negative, zero, non-numeric)
 
 ### 2. Lotto Issuance
-    - [ ] Calculate the number of tickets based on the amount entered
-    - [ ] Generate list of 6 random numbers as many as the number of tickets and create tickets
-      - [ ] Each ticket consists of 6 numbers in the range of 1 to 45 that are not duplicated
-    - [ ] Sort the generated numbers in ascending order
+- [ ] Calculate number of tickets based on purchase amount
+- [ ] Generate lotto tickets:
+  - [ ] Each ticket contains 6 unique random numbers between 1-45
+  - [ ] Numbers are sorted in ascending order
+- [ ] Display all generated tickets
 
 ### 3. Winning Calculation
-    - [ ] Compare each ticket with the winning number
-      - [ ] Calculate the number of matching numbers
-      - [ ] Do the bonus number check whether it matches or not
-    - [ ] Calculate Rank
-      - [ ] 6 matches: 1st
-      - [ ] 5 + bonus: 2nd
-      - [ ] 5: 3rd
-      - [ ] 4: 4th
-      - [ ] 3: 5th
-    - [ ] Calculate winning statistics (number by rank)
+- [ ] Compare each ticket against the winning number
+  - [ ] Count matching numbers
+  - [ ] Check if the bonus number matches
+- [ ] Determine rank based on match:
+  - [ ] 6 matches: 1st (2,000,000,000 won)
+  - [ ] 5 + bonus: 2nd (30,000,000 won)
+  - [ ] 5 matches: 3rd (1,500,000 won) 
+  - [ ] 4 matches: 4th (50,000 won)
+  - [ ] 3 matches: 5th (5,000 won)
+- [ ] Count number of tickets in each rank
 
-### 4. Calculate the rate of return
-    - [ ] Calculate the total winning amount
-    - [ ] Calculate the rate of return compared to the total purchase amount
+### 4. Return Rate
+- [ ] Calculate total winnings
+- [ ] Calculate and display the rate of return (to one decimal place)
 
 ### 5. Output Handling
-    - [ ] Print the number of purchased tickets and list of number
-    - [ ] Print winning statistics
-      - [ ] Follow the Example Execution in requirement document
-    - [ ] Print the rate of return
-      - [ ] Print it to the first decimal place. Example: `Total return rate is 62.5%.`
+- [ ] Print: 
+  - [ ] Number of purchased tickets and their numbers
+  - [ ] Winning statistics (follow example format in requirements)
+  - [ ] Return rate (e.g. `Total return rate is 62.5%.`)
 
 ### 6. Exception Handling
-    - [ ] If the input value is incorrect, throw `IllegalArgumentException` or `IllegalStateException`
-    - [ ] Error messages **SHOULD** always start with `[ERROR]`
-    - [ ] Re-prompt is required when incorrect input is entered
+- [ ] Throw `IllegalArgumentException` or `IllegalStateException` for invalid inputs
+- [ ] All error messages start with `[ERROR]`
+- [ ] Re-prompt is the user on invalid input
 
 ### 7. Structure and Testing
-    - [ ] `Lotto` class uses **ONLY** `numbers` as a field, and **MUST** include validation of the class with test code
-    - [ ] Separate `InputView` and `OutputView` classes or objects to separate UI and logic
-    - [ ] Write unit tests for each main class and core logic
-    - [ ] Write unit tests for exception situations
+- [ ] `Lotto` class: 
+  - [ ] Contains **ONLY** `numbers` field
+  - [ ] **MUST** include validation with test code
+- [ ] Separate `InputView` and `OutputView` for I/O handling
+- [ ] Write unit tests for:
+  - [ ] Core logic (ticket generation, match checking, ranking, etc.)
+  - [ ] Exception cases and input validation
