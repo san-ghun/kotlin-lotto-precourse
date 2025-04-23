@@ -32,7 +32,6 @@
     - [ ] Take user input of a bonus number
       - [ ] Verify if the number is in the range of 1 to 45, not duplicated with winning numbers
       - [ ] Exception handling for negative, 0, and non-number inputs
-    - [ ] If incorrect, the message `[ERROR]` is displayed and the user is prompted to re-enter the information
 2. Lotto Issuance
     - [ ] Calculate the number of tickets based on the amount entered
     - [ ] Generate list of 6 random numbers as many as the number of tickets and create tickets
@@ -41,7 +40,7 @@
 3. Winning Calculation
     - [ ] Compare each ticket with the winning number
       - [ ] Calculate the number of matching numbers
-      - [ ] Bonus number Check if it matches or not
+      - [ ] Do the bonus number check whether it matches or not
     - [ ] Calculate Rank
       - [ ] 6 matches: 1st
       - [ ] 5 + bonus: 2nd
@@ -49,14 +48,21 @@
       - [ ] 4: 4th
       - [ ] 3: 5th
     - [ ] Calculate winning statistics (number by rank)
-    - [ ] Calculate the rate of return
-4. Output Handling
+4. Calculate the rate of return
+    - [ ] Calculate the total winning amount
+    - [ ] Calculate the rate of return compared to the total purchase amount
+5. Output Handling
     - [ ] Print the number of purchased tickets and list of number
     - [ ] Print winning statistics
+      - [ ] Follow the Example Execution in requirement document
     - [ ] Print the rate of return
-    - [ ] Print error message starting with `[ERROR]`
-5. Structure and Testing
-    - [ ] `Lotto` class uses only `numbers` as a field, and must include validation of the class with test code
+      - [ ] Print it to the first decimal place. Example: `Total return rate is 62.5%.`
+6. Exception Handling
+    - [ ] If the input value is incorrect, throw `IllegalArgumentException` or `IllegalStateException`
+    - [ ] Error messages **SHOULD** always start with `[ERROR]`
+    - [ ] Re-prompt is required when incorrect input is entered
+7. Structure and Testing
+    - [ ] `Lotto` class uses **ONLY** `numbers` as a field, and **MUST** include validation of the class with test code
     - [ ] Separate `InputView` and `OutputView` classes or objects to separate UI and logic
     - [ ] Write unit tests for each main class and core logic
     - [ ] Write unit tests for exception situations
