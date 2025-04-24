@@ -39,7 +39,7 @@
 
 ### 1. Input Handling
 - [ ] Purchase Amount Input
-  - [ ] Prompt user for the purchase amount
+  - [x] Prompt user for the purchase amount
   - [ ] Verify it is a positive number divisible by 1000
   - [ ] Throw exception for invalid input (negative, zero, non-numeric, less than 1000)
 - [ ] Winning Numbers Input
