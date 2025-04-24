@@ -11,7 +11,7 @@ fun main() {
     //OutputView.printPurchasedLotto(lottoTicket)
 
     // 3. Input Winning Numbers
-    //val winningNumbers = InputView.readWinningNumbers()
+    val winningNumbers = InputView.readWinningNumbers()
     //val bonusNumber = Input.readBonusNumber()
 
     //val winningLotto = WinningLotto(Lotto(winningNumbers), bonusNumber)
