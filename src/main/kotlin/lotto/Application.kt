@@ -1,8 +1,10 @@
 package lotto
 
+import lotto.view.InputView
+
 fun main() {
     // 1. Input Purchase Amount
-    //val amount = InputView.readPurchaseAmount()
+    val amount = InputView.readPurchaseAmount()
 
     // 2. Issue Lottery Tickets
     //val lottoTicket = LottoGenerator.generate(amount)
