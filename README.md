@@ -20,6 +20,21 @@
 | **Minimum E2E Test**   | `./gradlew clean test` and then check `BUILD SUCCESSFUL`                                          |
 
 
+## Personal objectives
+
+- Write detailed feature list as a reference for test cases
+- Adopt TDD (Test Driven Development) as a development method
+- Adopt Domain concept, rather than MVC pattern
+  - Because the lottery system is a real world concept which should be defined and expressed in detail
+
+
+## Key design goals
+
+- Clearly separate domain logic and UI (Input/Output)
+- Each class is designed to have one responsibility (SRP)
+- Separate into testable structures
+
+
 ## Feature List
 
 ### 1. Input Handling
