@@ -5,6 +5,8 @@ import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertTrue
 
+private const val PRICE_PER_TICKET = 1_000
+
 class LottoMachineTest {
 
     private val testMachine = LottoMachine()
@@ -14,7 +16,7 @@ class LottoMachineTest {
         val testCases = listOf(1000, 5000, 3000, 9000, 15000, 98000, 135000)
         testCases.forEach { case ->
             val tickets = testMachine.issueBundle(case).tickets
-            assertEquals(case / 1_000, tickets.size)
+            assertEquals(case / PRICE_PER_TICKET, tickets.size)
         }
     }
 
