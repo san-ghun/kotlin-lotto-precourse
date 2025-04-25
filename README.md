@@ -37,8 +37,8 @@
 
 ## Terms and Definitions
 
-- A **lotto** is a list of 6 numbers those are in range of 1 to 45 without duplicate.
-- A **ticket** is a list of lotto(s) 
+- A **lotto** or a **ticket** is a list of 6 numbers those are in range of 1 to 45 without duplicate.
+- A **bundle** is a list of lotto(s) or lotto ticket(s) 
 
 
 ## Feature List
@@ -59,14 +59,14 @@
   - [x] Throw exception for invalid input (negative, zero, non-numeric)
 
 ### 2. Lotto Issuance
-- [ ] Calculate number of lottos based on purchase amount
-- [ ] Generate lotto ticket:
-  - [ ] Each lotto contains 6 unique random numbers between 1-45
+- [ ] Calculate number of tickets based on purchase amount
+- [ ] Generate lotto bundle:
+  - [ ] Each ticket contains 6 unique random numbers between 1-45
   - [ ] Numbers are sorted in ascending order
-- [ ] Display all generated lottos
+- [ ] Display all generated tickets
 
 ### 3. Winning Calculation
-- [ ] Compare each lotto against the winning number
+- [ ] Compare each ticket against the winning number
   - [ ] Count matching numbers
   - [ ] Check if the bonus number matches
 - [ ] Determine rank based on match:
@@ -75,7 +75,7 @@
   - [ ] 5 matches: 3rd (1,500,000 won) 
   - [ ] 4 matches: 4th (50,000 won)
   - [ ] 3 matches: 5th (5,000 won)
-- [ ] Count number of lottos in each rank
+- [ ] Count number of tickets in each rank
 
 ### 4. Return Rate
 - [ ] Calculate total winnings
@@ -83,7 +83,7 @@
 
 ### 5. Output Handling
 - [ ] Print: 
-  - [ ] Number of purchased lottos and their numbers
+  - [ ] Number of purchased tickets and their numbers
   - [ ] Winning statistics (follow example format in requirements)
   - [ ] Return rate (e.g. `Total return rate is 62.5%.`)
 
