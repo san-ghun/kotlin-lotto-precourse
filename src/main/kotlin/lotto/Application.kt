@@ -1,6 +1,6 @@
 package lotto
 
-import lotto.view.InputView
+import lotto.ui.InputView
 
 fun main() {
     // 1. Input Purchase Amount

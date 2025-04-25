@@ -1,7 +1,6 @@
-package lotto.view
+package lotto.ui
 
 import camp.nextstep.edu.missionutils.Console
-import net.bytebuddy.pool.TypePool.Resolution.Illegal
 
 object InputView {
     fun readPurchaseAmount(): Int {
