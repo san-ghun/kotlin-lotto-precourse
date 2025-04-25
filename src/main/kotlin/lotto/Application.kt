@@ -7,7 +7,8 @@ fun main() {
     val amount = InputView.readPurchaseAmount()
 
     // 2. Issue Lottery Tickets
-    //val lottoTicket = LottoGenerator.generate(amount)
+    val machine = LottoMachine()
+    val lottoTicket = machine.issueTicket(amount)
     //OutputView.printPurchasedLotto(lottoTicket)
 
     // 3. Input Winning Numbers
