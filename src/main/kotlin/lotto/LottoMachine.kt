@@ -4,12 +4,11 @@ private const val PRICE_PER_TICKET = 1_000
 
 class LottoMachine(private val generator: LottoGenerator = RandomLottoGenerator) {
     fun issueBundle(amount: Int): LottoBundle {
-        // Calculate number of ticket based on purchase amount
+        require(amount >= PRICE_PER_TICKET) { "[ERROR] Amount must be at least ${PRICE_PER_TICKET}." }
+        require(amount % PRICE_PER_TICKET == 0) { "[ERROR] Amount must be divisible by ${PRICE_PER_TICKET}." }
+
         val count = amount / PRICE_PER_TICKET
-        // Generate tickets in LottoTicket
         val tickets = List(count) { Lotto(generator.generateNumbers()) }
-            // Each lotto contains 6 unique random numbers between 1-45
-            // Numbers are sorted in ascending order
         return LottoBundle(tickets)
     }
 }
