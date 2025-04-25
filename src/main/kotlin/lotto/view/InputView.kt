@@ -22,4 +22,16 @@ object InputView {
                 require(it.all { n -> n in 1..45 }) { "[ERROR] All numbers must be in between 1 and 45."}
             }
     }
+
+    fun readBonusNumber(winningNumbers: List<Int>): Int {
+        println("Please enter the bonus number.")
+        val userInput = Console.readLine()
+        // Check input is a number
+        // Check non-numeric
+        // Check negative
+        // Check zero
+        // Check the number is in range 1-45
+        // Check the number is not duplicated from winning numbers
+        return 0
+    }
 }
