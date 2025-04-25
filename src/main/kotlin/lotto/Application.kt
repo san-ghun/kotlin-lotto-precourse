@@ -8,8 +8,8 @@ fun main() {
 
     // 2. Issue Lottery Tickets
     val machine = LottoMachine()
-    val lottoTicket = machine.issueTicket(amount)
-    //OutputView.printPurchasedLotto(lottoTicket)
+    val lottoBundle = machine.issueBundle(amount)
+    //OutputView.printPurchasedLotto(lottoBundle)
 
     // 3. Input Winning Numbers
     val winningNumbers = InputView.readWinningNumbers()
@@ -19,7 +19,7 @@ fun main() {
 
     // 4. Calculate Winning Matches
     //val result = LottoResult()
-    //lottoTicket.getTickets().forEach { lotto ->
+    //lottoBundle.getTickets().forEach { lotto ->
     //    val rank = winningLotto.match(lotto)
     //    result.add(rank)
     //}
