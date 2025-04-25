@@ -47,10 +47,10 @@
   - [x] Verify all numbers are in range 1-45 and not duplicated
   - [x] Throw exception for invalid format (empty, blank, more, less)
   - [x] Throw exception for invalid input (negative, zero, non-numeric)
-- [ ] Bonus Number Input
-  - [ ] Prompt user for 1 number
-  - [ ] Verify the number is in range 1-45 and not duplicated from the winning numbers
-  - [ ] Throw exception for invalid input (negative, zero, non-numeric)
+- [x] Bonus Number Input
+  - [x] Prompt user for 1 number
+  - [x] Verify the number is in range 1-45 and not duplicated from the winning numbers
+  - [x] Throw exception for invalid input (negative, zero, non-numeric)
 
 ### 2. Lotto Issuance
 - [ ] Calculate number of tickets based on purchase amount
