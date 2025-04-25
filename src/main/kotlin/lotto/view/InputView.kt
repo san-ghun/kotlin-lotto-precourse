@@ -31,7 +31,13 @@ object InputView {
         // Check negative
         // Check zero
         // Check the number is in range 1-45
+            .trim().toIntOrNull()
+            ?.also {
+                require(it in 1..45) { "[ERROR] Bonus number must be in between 1 and 45." }
+            }
         // Check the number is not duplicated from winning numbers
-        return 0
+            ?.takeIf { !winningNumbers.contains(it) }
+            ?: throw IllegalArgumentException("[ERROR] Invalid input.")
+        return userInput
     }
 }
