@@ -59,10 +59,10 @@
   - [x] Throw exception for invalid input (negative, zero, non-numeric)
 
 ### 2. Lotto Issuance
-- [ ] Calculate number of tickets based on purchase amount
-- [ ] Generate lotto bundle:
-  - [ ] Each ticket contains 6 unique random numbers between 1-45
-  - [ ] Numbers are sorted in ascending order
+- [x] Calculate number of tickets based on purchase amount
+- [x] Generate lotto bundle:
+  - [x] Each ticket contains 6 unique random numbers between 1-45
+  - [x] Numbers are sorted in ascending order
 - [ ] Display all generated tickets
 
 ### 3. Winning Calculation
