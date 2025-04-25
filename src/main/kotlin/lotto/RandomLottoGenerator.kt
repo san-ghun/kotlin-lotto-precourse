@@ -7,5 +7,4 @@ object RandomLottoGenerator: LottoGenerator {
         val numbers = Randoms.pickUniqueNumbersInRange(1, 45, 6)
         return numbers.sorted()
     }
-
 }
