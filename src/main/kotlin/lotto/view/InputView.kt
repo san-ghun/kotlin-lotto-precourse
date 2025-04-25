@@ -1,6 +1,7 @@
 package lotto.view
 
 import camp.nextstep.edu.missionutils.Console
+import net.bytebuddy.pool.TypePool.Resolution.Illegal
 
 object InputView {
     fun readPurchaseAmount(): Int {
@@ -25,19 +26,12 @@ object InputView {
 
     fun readBonusNumber(winningNumbers: List<Int>): Int {
         println("Please enter the bonus number.")
-        val userInput = Console.readLine()
-        // Check input is a number
-        // Check non-numeric
-        // Check negative
-        // Check zero
-        // Check the number is in range 1-45
+        return Console.readLine()
             .trim().toIntOrNull()
             ?.also {
+                require(!winningNumbers.contains(it)) { "[ERROR] Bonus number must not a duplicated from the winning numbers." }
                 require(it in 1..45) { "[ERROR] Bonus number must be in between 1 and 45." }
             }
-        // Check the number is not duplicated from winning numbers
-            ?.takeIf { !winningNumbers.contains(it) }
             ?: throw IllegalArgumentException("[ERROR] Invalid input.")
-        return userInput
     }
 }
