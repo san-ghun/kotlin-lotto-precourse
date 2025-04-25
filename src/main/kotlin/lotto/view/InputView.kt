@@ -13,20 +13,13 @@ object InputView {
 
     fun readWinningNumbers(): List<Int> {
         println("Please enter last week's winning numbers.")
-        val userInput = Console.readLine()
-            // Check comma-separated
+        return Console.readLine()
             .split(",")
-            // Check non-numeric
             .map { it.trim().toIntOrNull() ?: throw IllegalArgumentException("[ERROR] Invalid input.") }
-            // Check empty, blank
-            // Check for 6 numbers
-            // Check numbers in range 1-45
-            // Check duplicates
             .also {
                 require(it.size == 6) { "[ERROR] Must provide 6 numbers."}
                 require(it.distinct().size == 6) { "[ERROR] Numbers must not be duplicated."}
                 require(it.all { n -> n in 1..45 }) { "[ERROR] All numbers must be in between 1 and 45."}
             }
-        return userInput
     }
 }
