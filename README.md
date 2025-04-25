@@ -42,11 +42,11 @@
   - [x] Prompt user for the purchase amount
   - [x] Verify it is a positive number divisible by 1000
   - [x] Throw exception for invalid input (negative, zero, non-numeric, less than 1000)
-- [ ] Winning Numbers Input
-  - [ ] Prompt user for 6 comma-separated numbers
-  - [ ] Verify all numbers are in range 1-45 and not duplicated
-  - [ ] Throw exception for invalid format (empty, blank, more, less)
-  - [ ] Throw exception for invalid input (negative, zero, non-numeric)
+- [x] Winning Numbers Input
+  - [x] Prompt user for 6 comma-separated numbers
+  - [x] Verify all numbers are in range 1-45 and not duplicated
+  - [x] Throw exception for invalid format (empty, blank, more, less)
+  - [x] Throw exception for invalid input (negative, zero, non-numeric)
 - [ ] Bonus Number Input
   - [ ] Prompt user for 1 number
   - [ ] Verify the number is in range 1-45 and not duplicated from the winning numbers
