@@ -41,6 +41,16 @@ class LottoMachineTest {
     }
 
     @Test
+    fun `numbers in lotto tickets are sorted in ascending order`() {
+        val tickets = testMachine.issueBundle(25000).tickets
+        tickets.forEach { ticket ->
+            val origin = ticket.getNumbers()
+            val sorted = origin.sorted()
+            assertEquals(sorted, origin)
+        }
+    }
+
+    @Test
     fun `throws an exception when amount of currency is less than the price of a ticket`() {
         val testCases = listOf(0, -5, 1, 2, 9, 10, 100, 523, 999)
         testCases.forEach { case ->
