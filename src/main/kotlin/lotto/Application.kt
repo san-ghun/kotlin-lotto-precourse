@@ -10,6 +10,9 @@ fun main() {
     val machine = LottoMachine()
     val lottoBundle = machine.issueBundle(amount)
     //OutputView.printPurchasedLotto(lottoBundle)
+    lottoBundle.tickets.forEach { ticket ->
+        println(ticket.getNumbers().toString())
+    }
 
     // 3. Input Winning Numbers
     val winningNumbers = InputView.readWinningNumbers()
