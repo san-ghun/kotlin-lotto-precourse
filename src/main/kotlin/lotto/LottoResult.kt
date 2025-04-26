@@ -1,5 +1,7 @@
 package lotto
 
+import java.util.Locale
+
 class LottoResult {
     private var _winningBoard: MutableMap<Rank, Int> = mutableMapOf()
     val winningBoard: Map<Rank, Int>
@@ -11,5 +13,10 @@ class LottoResult {
 
     fun add(rank: Rank) {
         _winningBoard[rank] = _winningBoard.getOrDefault(rank, 0) + 1
+    }
+
+    fun report(rank: Rank): String {
+        // TODO: NOT SURE I can `import java.util`
+        return "${rank.matchCount} Matches (${String.format(Locale.US, "%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
     }
 }
