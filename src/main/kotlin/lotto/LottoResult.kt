@@ -17,8 +17,8 @@ class LottoResult {
 
     fun report(rank: Rank): String {
         if (rank.mustMatchBonus)
-            return "${rank.matchCount} Matches + Bonus Ball (${formatOutput("%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
-        return "${rank.matchCount} Matches (${formatOutput("%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
+            return "${rank.matchCount} Matches + Bonus Ball (${formatOutput("%,d", rank.prize)} KRW) – ${_winningBoard[rank]} tickets"
+        return "${rank.matchCount} Matches (${formatOutput("%,d", rank.prize)} KRW) – ${_winningBoard[rank]} tickets"
     }
 
     fun calculateProfit(): Double {
@@ -28,8 +28,9 @@ class LottoResult {
             .toDouble()
     }
 
-    fun formatOutput(format: String, args: Any, locale: Locale = Locale.US): String {
-        // TODO: NOT SURE I can `import java.util`
-        return String.format(locale, format, args)
+    companion object {
+        fun formatOutput(format: String, args: Any, locale: Locale = Locale.US): String {
+            return String.format(locale, format, args)
+        }
     }
 }
