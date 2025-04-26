@@ -20,4 +20,10 @@ class WinningLotto(
     fun isMatchBonusNumber(lotto: Lotto): Boolean {
         return bonusNumber in lotto.getNumbers()
     }
+
+    fun match(lotto: Lotto): Rank {
+        val matchCount = this.matchCount(lotto)
+        val isMatchBonus = this.isMatchBonusNumber(lotto)
+        return Rank.matching(matchCount, isMatchBonus)
+    }
 }
