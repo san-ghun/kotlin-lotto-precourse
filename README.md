@@ -66,9 +66,9 @@
 - [x] Display all generated tickets
 
 ### 3. Winning Calculation
-- [ ] Compare each ticket against the winning number
-  - [ ] Count matching numbers
-  - [ ] Check if the bonus number matches
+- [x] Compare each ticket against the winning number
+  - [x] Count matching numbers
+  - [x] Check if the bonus number matches
 - [ ] Determine rank based on match:
   - [ ] 6 matches: 1st (2,000,000,000 won)
   - [ ] 5 + bonus: 2nd (30,000,000 won)
