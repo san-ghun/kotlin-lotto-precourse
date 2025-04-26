@@ -90,7 +90,7 @@
 ### 6. Exception Handling
 - [x] Throw `IllegalArgumentException` or `IllegalStateException` for invalid inputs
 - [x] All error messages start with `[ERROR]`
-- [ ] Re-prompt is the user on invalid input
+- [ ] Re-prompt when the user on invalid input
 
 ### 7. Structure and Testing
 - [x] `Lotto` class: 
