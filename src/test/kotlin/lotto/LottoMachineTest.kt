@@ -15,7 +15,7 @@ class LottoMachineTest {
     fun `issue bundle of lotto tickets based on the amount of input`() {
         val testCases = listOf(1000, 5000, 3000, 9000, 15000, 98000, 135000)
         testCases.forEach { case ->
-            val tickets = testMachine.issueBundle(case).tickets
+            val tickets = testMachine.issueBundle(case)
             assertEquals(case / PRICE_PER_TICKET, tickets.size)
         }
     }
@@ -24,7 +24,7 @@ class LottoMachineTest {
     fun `each lotto tickets have 6 numbers`() {
         val testCases = listOf(1000, 5000, 3000)
         testCases.forEach { case ->
-            val firstTicket = testMachine.issueBundle(case).tickets[0]
+            val firstTicket = testMachine.issueBundle(case)[0]
             assertEquals(6, firstTicket.getNumbers().size)
         }
     }
@@ -33,7 +33,7 @@ class LottoMachineTest {
     fun `lotto tickets have non-duplicated numbers between 1 and 45`() {
         val testCases = listOf(1000, 2000, 7000)
         testCases.forEach { case ->
-            val firstTicket = testMachine.issueBundle(case).tickets[0]
+            val firstTicket = testMachine.issueBundle(case)[0]
             val numbers = firstTicket.getNumbers()
             assertTrue(numbers.all { it in 1..45 })
             assertEquals(6, numbers.distinct().size)
@@ -42,7 +42,7 @@ class LottoMachineTest {
 
     @Test
     fun `numbers in lotto tickets are sorted in ascending order`() {
-        val tickets = testMachine.issueBundle(25000).tickets
+        val tickets = testMachine.issueBundle(25000)
         tickets.forEach { ticket ->
             val origin = ticket.getNumbers()
             val sorted = origin.sorted()
