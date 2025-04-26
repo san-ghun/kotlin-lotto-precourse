@@ -25,6 +25,6 @@ object OutputView {
     }
 
     fun printProfitRate(result: LottoResult, amount: Int) {
-        TODO("print profit rate with term 'return rate'")
+        println("Total return rate is ${result.formatOutput("%,.1f", result.calculateProfit() / amount * 100)}%.")
     }
 }
