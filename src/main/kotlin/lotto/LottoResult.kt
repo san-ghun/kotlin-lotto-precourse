@@ -16,9 +16,13 @@ class LottoResult {
     }
 
     fun report(rank: Rank): String {
-        // TODO: NOT SURE I can `import java.util`
         if (rank.mustMatchBonus)
-            return "${rank.matchCount} Matches + Bonus Ball (${String.format(Locale.US, "%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
-        return "${rank.matchCount} Matches (${String.format(Locale.US, "%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
+            return "${rank.matchCount} Matches + Bonus Ball (${formatOutput("%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
+        return "${rank.matchCount} Matches (${formatOutput("%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
+    }
+
+    fun formatOutput(format: String, args: Any, locale: Locale = Locale.US): String {
+        // TODO: NOT SURE I can `import java.util`
+        return String.format(locale, format, args)
     }
 }
