@@ -16,7 +16,7 @@ fun main() {
     val winningNumbers = InputView.readWinningNumbers()
     val bonusNumber = InputView.readBonusNumber(winningNumbers)
 
-    //val winningLotto = WinningLotto(Lotto(winningNumbers), bonusNumber)
+    val winningLotto = WinningLotto(winningNumbers, bonusNumber)
 
     // 4. Calculate Winning Matches
     //val result = LottoResult()
