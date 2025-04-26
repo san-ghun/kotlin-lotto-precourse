@@ -17,6 +17,8 @@ class LottoResult {
 
     fun report(rank: Rank): String {
         // TODO: NOT SURE I can `import java.util`
+        if (rank.mustMatchBonus)
+            return "${rank.matchCount} Matches + Bonus Ball (${String.format(Locale.US, "%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
         return "${rank.matchCount} Matches (${String.format(Locale.US, "%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
     }
 }
