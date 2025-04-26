@@ -78,18 +78,18 @@
 - [x] Count number of tickets in each rank
 
 ### 4. Return Rate
-- [ ] Calculate total winnings
-- [ ] Calculate and display the rate of return (to one decimal place)
+- [x] Calculate total winnings
+- [x] Calculate and display the rate of return (to one decimal place)
 
 ### 5. Output Handling
-- [ ] Print: 
+- [x] Print: 
   - [x] Number of purchased tickets and their numbers
-  - [ ] Winning statistics (follow example format in requirements)
-  - [ ] Return rate (e.g. `Total return rate is 62.5%.`)
+  - [x] Winning statistics (follow example format in requirements)
+  - [x] Return rate (e.g. `Total return rate is 62.5%.`)
 
 ### 6. Exception Handling
 - [x] Throw `IllegalArgumentException` or `IllegalStateException` for invalid inputs
-- [ ] All error messages start with `[ERROR]`
+- [x] All error messages start with `[ERROR]`
 - [ ] Re-prompt is the user on invalid input
 
 ### 7. Structure and Testing
