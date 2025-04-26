@@ -19,11 +19,11 @@ fun main() {
     val winningLotto = WinningLotto(winningNumbers, bonusNumber)
 
     // 4. Calculate Winning Matches
-    //val result = LottoResult()
-    //lottoBundle.getTickets().forEach { lotto ->
-    //    val rank = winningLotto.match(lotto)
-    //    result.add(rank)
-    //}
+    val result = LottoResult()
+    lottoBundle.tickets.forEach { lotto ->
+        val rank = winningLotto.match(lotto)
+        result.add(rank)
+    }
 
     // 5. Output Statistics and Return Rate
     //OutputView.printStatistics(result)
