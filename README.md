@@ -69,13 +69,13 @@
 - [x] Compare each ticket against the winning number
   - [x] Count matching numbers
   - [x] Check if the bonus number matches
-- [ ] Determine rank based on match:
-  - [ ] 6 matches: 1st (2,000,000,000 won)
-  - [ ] 5 + bonus: 2nd (30,000,000 won)
-  - [ ] 5 matches: 3rd (1,500,000 won) 
-  - [ ] 4 matches: 4th (50,000 won)
-  - [ ] 3 matches: 5th (5,000 won)
-- [ ] Count number of tickets in each rank
+- [x] Determine rank based on match:
+  - [x] 6 matches: 1st (2,000,000,000 won)
+  - [x] 5 + bonus: 2nd (30,000,000 won)
+  - [x] 5 matches: 3rd (1,500,000 won) 
+  - [x] 4 matches: 4th (50,000 won)
+  - [x] 3 matches: 5th (5,000 won)
+- [x] Count number of tickets in each rank
 
 ### 4. Return Rate
 - [ ] Calculate total winnings
@@ -83,20 +83,20 @@
 
 ### 5. Output Handling
 - [ ] Print: 
-  - [ ] Number of purchased tickets and their numbers
+  - [x] Number of purchased tickets and their numbers
   - [ ] Winning statistics (follow example format in requirements)
   - [ ] Return rate (e.g. `Total return rate is 62.5%.`)
 
 ### 6. Exception Handling
-- [ ] Throw `IllegalArgumentException` or `IllegalStateException` for invalid inputs
+- [x] Throw `IllegalArgumentException` or `IllegalStateException` for invalid inputs
 - [ ] All error messages start with `[ERROR]`
 - [ ] Re-prompt is the user on invalid input
 
 ### 7. Structure and Testing
-- [ ] `Lotto` class: 
-  - [ ] Contains **ONLY** `numbers` field
-  - [ ] **MUST** include validation with test code
-- [ ] Separate `InputView` and `OutputView` for I/O handling
+- [x] `Lotto` class: 
+  - [x] Contains **ONLY** `numbers` field
+  - [x] **MUST** include validation with test code
+- [x] Separate `InputView` and `OutputView` for I/O handling
 - [ ] Write unit tests for:
   - [ ] Core logic (ticket generation, match checking, ranking, etc.)
   - [ ] Exception cases and input validation
