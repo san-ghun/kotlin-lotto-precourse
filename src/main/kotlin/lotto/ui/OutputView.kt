@@ -14,7 +14,6 @@ object OutputView {
     }
 
     fun printStatistics(result: LottoResult) {
-        val board = result.winningBoard
         println("\nWinning Statistics")
         println("---")
         println(result.report(Rank.entries[4]))
@@ -25,6 +24,6 @@ object OutputView {
     }
 
     fun printProfitRate(result: LottoResult, amount: Int) {
-        println("Total return rate is ${result.formatOutput("%,.1f", result.calculateProfit() / amount * 100)}%.")
+        println("Total return rate is ${LottoResult.formatOutput("%,.1f", result.calculateProfit() / amount * 100)}%.")
     }
 }
