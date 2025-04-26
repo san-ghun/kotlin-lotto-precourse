@@ -5,7 +5,7 @@ import lotto.ui.OutputView
 
 fun main() {
     // 1. Input Purchase Amount
-    val amount: Int = InputView.readPurchaseAmount()
+    val amount: Int = retryable { InputView.readPurchaseAmount() }
 
     // 2. Issue Lottery Tickets
     val machine = LottoMachine()
@@ -13,8 +13,8 @@ fun main() {
     OutputView.printPurchasedLotto(lottoBundle)
 
     // 3. Input Winning Numbers
-    val winningNumbers: List<Int> = InputView.readWinningNumbers()
-    val bonusNumber: Int = InputView.readBonusNumber(winningNumbers)
+    val winningNumbers: List<Int> = retryable { InputView.readWinningNumbers() }
+    val bonusNumber: Int = retryable { InputView.readBonusNumber(winningNumbers) }
 
     val winningLotto = WinningLotto(winningNumbers, bonusNumber)
 
@@ -28,4 +28,14 @@ fun main() {
     // 5. Output Statistics and Return Rate
     OutputView.printStatistics(result)
     OutputView.printProfitRate(result, amount)
+}
+
+private fun <T> retryable(inputMethod: () -> T): T {
+    while (true) {
+        try {
+            return inputMethod()
+        } catch (err: IllegalArgumentException) {
+            println("${err.message}")
+        }
+    }
 }
