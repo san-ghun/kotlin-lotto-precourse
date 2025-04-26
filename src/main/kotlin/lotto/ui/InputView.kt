@@ -12,7 +12,7 @@ object InputView {
     }
 
     fun readWinningNumbers(): List<Int> {
-        println("Please enter last week's winning numbers.")
+        println("\nPlease enter last week's winning numbers.")
         return Console.readLine()
             .split(",")
             .map { it.trim().toIntOrNull() ?: throw IllegalArgumentException("[ERROR] Invalid input.") }
@@ -24,7 +24,7 @@ object InputView {
     }
 
     fun readBonusNumber(winningNumbers: List<Int>): Int {
-        println("Please enter the bonus number.")
+        println("\nPlease enter the bonus number.")
         return Console.readLine()
             .trim().toIntOrNull()
             ?.also {
