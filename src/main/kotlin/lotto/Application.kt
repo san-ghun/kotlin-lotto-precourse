@@ -1,6 +1,7 @@
 package lotto
 
 import lotto.ui.InputView
+import lotto.ui.OutputView
 
 fun main() {
     // 1. Input Purchase Amount
@@ -9,10 +10,7 @@ fun main() {
     // 2. Issue Lottery Tickets
     val machine = LottoMachine()
     val lottoBundle = machine.issueBundle(amount)
-    //OutputView.printPurchasedLotto(lottoBundle)
-    lottoBundle.tickets.forEach { ticket ->
-        println(ticket.getNumbers().toString())
-    }
+    OutputView.printPurchasedLotto(lottoBundle)
 
     // 3. Input Winning Numbers
     val winningNumbers = InputView.readWinningNumbers()
