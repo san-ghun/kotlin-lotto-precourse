@@ -1,17 +1,15 @@
 package lotto
 
 class WinningLotto(
-    private val numbers: List<Int>,
+    numbers: List<Int>,
     private val bonusNumber: Int,
 ) {
+    private val ticket: Lotto = Lotto(numbers)
 
     init {
         require(bonusNumber in 1..45) { "[ERROR] Bonus number must be in between 1 and 45." }
         require(!numbers.contains(bonusNumber)) { "[ERROR] Bonus number must not a duplicated from the winning numbers." }
     }
-
-    val ticket: Lotto
-        get() = Lotto(numbers)
 
     fun matchCount(lotto: Lotto): Int {
         return lotto.getNumbers().count { it in ticket.getNumbers() }
@@ -22,8 +20,8 @@ class WinningLotto(
     }
 
     fun match(lotto: Lotto): Rank {
-        val matchCount = this.matchCount(lotto)
-        val isMatchBonus = this.isMatchBonusNumber(lotto)
+        val matchCount = matchCount(lotto)
+        val isMatchBonus = isMatchBonusNumber(lotto)
         return Rank.matching(matchCount, isMatchBonus)
     }
 }
