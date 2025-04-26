@@ -2,7 +2,7 @@ package lotto
 
 class LottoResult {
     private var _winningBoard: MutableMap<Rank, Int> = mutableMapOf()
-    val winningBoard: MutableMap<Rank, Int>
+    val winningBoard: Map<Rank, Int>
         get() = _winningBoard
 
     init {
