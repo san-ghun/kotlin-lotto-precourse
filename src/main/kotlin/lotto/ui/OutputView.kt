@@ -1,14 +1,13 @@
 package lotto.ui
 
-import lotto.LottoBundle
+import lotto.Lotto
 import lotto.LottoResult
 import lotto.Rank
 
 object OutputView {
-    fun printPurchasedLotto(bundle: LottoBundle) {
-        val tickets = bundle.tickets
-        println("\nYou have purchased ${tickets.size} tickets.")
-        tickets.forEach { ticket ->
+    fun printPurchasedLotto(bundle: List<Lotto>) {
+        println("\nYou have purchased ${bundle.size} tickets.")
+        bundle.forEach { ticket ->
             println(ticket.getNumbers().toString())
         }
     }
