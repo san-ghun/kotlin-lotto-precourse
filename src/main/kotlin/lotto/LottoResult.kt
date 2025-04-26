@@ -21,6 +21,13 @@ class LottoResult {
         return "${rank.matchCount} Matches (${formatOutput("%,d", rank.prize)} KRW) - ${_winningBoard[rank]} tickets"
     }
 
+    fun calculateProfit(): Double {
+        return winningBoard.entries
+            .map { entry -> entry.key.prize * entry.value }
+            .reduce { acc, i -> acc + i }
+            .toDouble()
+    }
+
     fun formatOutput(format: String, args: Any, locale: Locale = Locale.US): String {
         // TODO: NOT SURE I can `import java.util`
         return String.format(locale, format, args)
