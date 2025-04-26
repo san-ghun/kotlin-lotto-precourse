@@ -14,9 +14,14 @@ enum class Rank(
 
     companion object {
         fun matching(matchCount: Int, isMatchBonus: Boolean): Rank {
-            return entries.find {
-                it.matchCount == matchCount && (it.mustMatchBonus == isMatchBonus || it.matchCount < 5)
-            } ?: NONE
+            return when {
+                matchCount == 6 -> FIRST
+                matchCount == 5 && isMatchBonus -> SECOND
+                matchCount == 5 -> THIRD
+                matchCount == 4 -> FORTH
+                matchCount == 3 -> FIFTH
+                else -> NONE
+            }
         }
     }
 }
