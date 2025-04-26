@@ -48,4 +48,29 @@ class WinningLottoTest {
         assertTrue(winningLotto.isMatchBonusNumber(userLottoTrue))
         assertFalse(winningLotto.isMatchBonusNumber(userLottoFalse))
     }
+
+    @Test
+    fun `match() - return matching Rank of given lotto ticket`() {
+        val winningNumbers = listOf(1, 2, 3, 4, 5, 6)
+        val bonusNumber = 7
+        val winningLotto = WinningLotto(winningNumbers, bonusNumber)
+
+        val userLottoCaseFirst = Lotto(winningNumbers)
+        val userLottoCaseSecond = Lotto(listOf(1, 2, 3, 4, 5, bonusNumber))
+        val userLottoCaseThird = Lotto(listOf(1, 2, 3, 4, 5, 8))
+        val userLottoCaseFourth = Lotto(listOf(1, 2, 3, 4, 8, 9))
+        val userLottoCaseFifth = Lotto(listOf(1, 2, 3, 8, 9, 10))
+        val userLottoCaseNone1 = Lotto(listOf(1, 2, 8, 9, 10, 11))
+        val userLottoCaseNone2 = Lotto(listOf(1, 8, 9, 10, 11, 12))
+        val userLottoCaseNone3 = Lotto(listOf(8, 9, 10, 11, 12, 13))
+
+        assertEquals(Rank.FIRST, winningLotto.match(userLottoCaseFirst))
+        assertEquals(Rank.SECOND, winningLotto.match(userLottoCaseSecond))
+        assertEquals(Rank.THIRD, winningLotto.match(userLottoCaseThird))
+        assertEquals(Rank.FOURTH, winningLotto.match(userLottoCaseFourth))
+        assertEquals(Rank.FIFTH, winningLotto.match(userLottoCaseFifth))
+        assertEquals(Rank.NONE, winningLotto.match(userLottoCaseNone1))
+        assertEquals(Rank.NONE, winningLotto.match(userLottoCaseNone2))
+        assertEquals(Rank.NONE, winningLotto.match(userLottoCaseNone3))
+    }
 }
