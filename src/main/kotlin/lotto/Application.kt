@@ -26,6 +26,6 @@ fun main() {
     }
 
     // 5. Output Statistics and Return Rate
-    //OutputView.printStatistics(result)
-    //OutputView.printReturnRate(result, amount)
+    OutputView.printStatistics(result)
+    OutputView.printProfitRate(result, amount)
 }
