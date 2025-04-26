@@ -1,5 +1,8 @@
 package lotto
 
+import lotto.util.LottoGenerator
+import lotto.util.RandomLottoGenerator
+
 private const val PRICE_PER_TICKET = 1_000
 
 class LottoMachine(private val generator: LottoGenerator = RandomLottoGenerator) {
