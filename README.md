@@ -63,7 +63,7 @@
 - [x] Generate lotto bundle:
   - [x] Each ticket contains 6 unique random numbers between 1-45
   - [x] Numbers are sorted in ascending order
-- [ ] Display all generated tickets
+- [x] Display all generated tickets
 
 ### 3. Winning Calculation
 - [ ] Compare each ticket against the winning number
