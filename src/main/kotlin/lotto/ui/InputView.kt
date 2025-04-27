@@ -4,12 +4,12 @@ import camp.nextstep.edu.missionutils.Console
 import lotto.Config
 
 object InputView {
-    private val lottoLength: Int = Config.LENGTH_OF_LOTTO
-    private val minNumber: Int = Config.MIN_LOTTO_NUMBER
-    private val maxNumber: Int = Config.MAX_LOTTO_NUMBER
+    private val lottoLength = Config.LENGTH_OF_LOTTO
+    private val minNumber = Config.MIN_LOTTO_NUMBER
+    private val maxNumber = Config.MAX_LOTTO_NUMBER
 
     fun readPurchaseAmount(): Int {
-        val pricePerTicket: Int = Config.PRICE_PER_TICKET
+        val pricePerTicket = Config.PRICE_PER_TICKET
         println("Please enter the purchase amount.")
         return Console.readLine()
             .trim()

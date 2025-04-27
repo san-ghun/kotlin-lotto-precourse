@@ -4,9 +4,9 @@ class WinningLotto(
     numbers: List<Int>,
     private val bonusNumber: Int,
 ) {
-    private val minNumber: Int = Config.MIN_LOTTO_NUMBER
-    private val maxNumber: Int = Config.MAX_LOTTO_NUMBER
-    private val ticket: Lotto = Lotto(numbers)
+    private val minNumber = Config.MIN_LOTTO_NUMBER
+    private val maxNumber = Config.MAX_LOTTO_NUMBER
+    private val ticket = Lotto(numbers)
 
     init {
         require(bonusNumber in minNumber..maxNumber) { "[ERROR] Bonus number must be in between $minNumber and $maxNumber." }

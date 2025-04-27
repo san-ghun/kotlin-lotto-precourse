@@ -4,14 +4,14 @@ import lotto.ui.InputView
 import lotto.ui.OutputView
 
 fun main() {
-    val amount: Int = retryable { InputView.readPurchaseAmount() }
+    val amount = retryable { InputView.readPurchaseAmount() }
 
     val machine = LottoMachine()
-    val lottoBundle: List<Lotto> = machine.issueBundle(amount)
+    val lottoBundle = machine.issueBundle(amount)
     OutputView.printPurchasedLotto(lottoBundle)
 
-    val winningNumbers: List<Int> = retryable { InputView.readWinningNumbers() }
-    val bonusNumber: Int = retryable { InputView.readBonusNumber(winningNumbers) }
+    val winningNumbers = retryable { InputView.readWinningNumbers() }
+    val bonusNumber = retryable { InputView.readBonusNumber(winningNumbers) }
     val winningLotto = WinningLotto(winningNumbers, bonusNumber)
 
     val result = LottoResult()

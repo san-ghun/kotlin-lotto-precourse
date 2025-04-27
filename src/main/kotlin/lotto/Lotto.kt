@@ -9,5 +9,5 @@ class Lotto(private val numbers: List<Int>) {
         }) { "[ERROR] Lotto numbers must be between ${Config.MIN_LOTTO_NUMBER} and ${Config.MAX_LOTTO_NUMBER}."}
     }
 
-    fun getNumbers(): List<Int> = numbers.sorted()
+    fun getNumbers() = numbers.sorted()
 }

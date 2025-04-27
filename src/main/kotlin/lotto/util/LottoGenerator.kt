@@ -9,9 +9,9 @@ interface LottoGenerator {
 
 object RandomLottoGenerator: LottoGenerator {
     override fun generateNumbers(): List<Int> {
-        val lottoLength: Int = Config.LENGTH_OF_LOTTO
-        val minNumber: Int = Config.MIN_LOTTO_NUMBER
-        val maxNumber: Int = Config.MAX_LOTTO_NUMBER
+        val lottoLength = Config.LENGTH_OF_LOTTO
+        val minNumber = Config.MIN_LOTTO_NUMBER
+        val maxNumber = Config.MAX_LOTTO_NUMBER
 
         val numbers = Randoms.pickUniqueNumbersInRange(minNumber, maxNumber, lottoLength)
         return numbers.sorted()
