@@ -1,13 +1,14 @@
 package lotto
 
 class Lotto(private val numbers: List<Int>) {
-    init {
-        require(numbers.size == 6) { "[ERROR] Lotto must contain exactly 6 numbers." }
-    }
+    private val lottoLength: Int = Config.LENGTH_OF_LOTTO
+    private val minNumber: Int = Config.MIN_LOTTO_NUMBER
+    private val maxNumber: Int = Config.MAX_LOTTO_NUMBER
 
     init {
-        require(numbers.distinct().size == 6) { "[ERROR] Lotto numbers must be unique."}
-        require(numbers.all { it in 1..45 }) { "[ERROR] Lotto numbers must be between 1 and 45."}
+        require(numbers.size == lottoLength) { "[ERROR] Lotto must contain exactly $lottoLength numbers." }
+        require(numbers.distinct().size == lottoLength) { "[ERROR] Lotto numbers must be unique."}
+        require(numbers.all { it in minNumber..maxNumber }) { "[ERROR] Lotto numbers must be between $minNumber and $maxNumber."}
     }
 
     fun getNumbers(): List<Int> = numbers.sorted()

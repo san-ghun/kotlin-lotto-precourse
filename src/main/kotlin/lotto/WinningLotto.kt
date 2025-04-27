@@ -4,10 +4,12 @@ class WinningLotto(
     numbers: List<Int>,
     private val bonusNumber: Int,
 ) {
+    private val minNumber: Int = Config.MIN_LOTTO_NUMBER
+    private val maxNumber: Int = Config.MAX_LOTTO_NUMBER
     private val ticket: Lotto = Lotto(numbers)
 
     init {
-        require(bonusNumber in 1..45) { "[ERROR] Bonus number must be in between 1 and 45." }
+        require(bonusNumber in minNumber..maxNumber) { "[ERROR] Bonus number must be in between $minNumber and $maxNumber." }
         require(!numbers.contains(bonusNumber)) { "[ERROR] Bonus number must not a duplicated from the winning numbers." }
     }
 
