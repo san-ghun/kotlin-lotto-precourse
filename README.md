@@ -97,6 +97,6 @@
   - [x] Contains **ONLY** `numbers` field
   - [x] **MUST** include validation with test code
 - [x] Separate `InputView` and `OutputView` for I/O handling
-- [ ] Write unit tests for:
-  - [ ] Core logic (ticket generation, match checking, ranking, etc.)
-  - [ ] Exception cases and input validation
+- [x] Write unit tests for:
+  - [x] Core logic (ticket generation, match checking, ranking, etc.)
+  - [x] Exception cases and input validation
