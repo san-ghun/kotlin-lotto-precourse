@@ -23,8 +23,7 @@ class LottoResult {
 
     fun calculateProfit(): Double {
         return winningBoard.entries
-            .map { entry -> entry.key.prize * entry.value }
-            .reduce { acc, i -> acc + i }
+            .sumOf { it.key.prize * it.value }
             .toDouble()
     }
 
