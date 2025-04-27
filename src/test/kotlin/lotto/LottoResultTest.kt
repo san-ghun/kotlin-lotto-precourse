@@ -30,4 +30,56 @@ class LottoResultTest {
         repeat(3) { result.add(rank) }
         assertEquals(3, result.winningBoard[rank])
     }
+
+    @Test
+    fun `report() - return dedicated messages for each Rank without bonus matching`() {
+        val result = LottoResult()
+        val rank = Rank.THIRD
+
+        val expected: (Int) -> String = { "5 Matches (1,500,000 KRW) – $it tickets" }
+        var repeatCount = 0
+
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected(repeatCount), result.report(rank))
+
+        repeatCount += 3
+
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected(repeatCount), result.report(rank))
+    }
+
+    @Test
+    fun `report() - return dedicated message for a Rank with bonus matching`() {
+        val result = LottoResult()
+        val rank = Rank.SECOND
+
+        val expected: (Int) -> String = { "5 Matches + Bonus Ball (30,000,000 KRW) – $it tickets" }
+        var repeatCount = 0
+
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected(repeatCount), result.report(rank))
+
+        repeatCount += 3
+
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected(repeatCount), result.report(rank))
+    }
+
+    @Test
+    fun `calculateProfit() - return total profit from lotto result`() {
+        val result = LottoResult()
+        val rank = Rank.FOURTH
+
+        var expected: Double
+        var repeatCount = 0
+
+        expected = 0.0
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected, result.calculateProfit())
+
+        repeatCount += 3
+        expected = 150_000.0
+        repeat(repeatCount) { result.add(rank) }
+        assertEquals(expected, result.calculateProfit())
+    }
 }
