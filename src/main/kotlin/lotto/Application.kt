@@ -4,7 +4,7 @@ import lotto.ui.InputView
 import lotto.ui.OutputView
 
 fun main() {
-    val amount = retryable { InputView.readPurchaseAmount() }
+    val amount = takePayment()
     val lottoBundle = issueLottoBundle(amount)
     OutputView.printPurchasedLotto(lottoBundle)
 
@@ -14,14 +14,28 @@ fun main() {
     OutputView.printProfitRate(result, amount)
 }
 
+private fun takePayment(): Int {
+    val purchaseAmount = retryable {
+        InputView.showInstruction("Please enter the purchase amount.")
+        InputView.readPurchaseAmount()
+    }
+    return purchaseAmount
+}
+
 private fun issueLottoBundle(amount: Int): List<Lotto> {
     val machine = LottoMachine()
     return machine.issueBundle(amount)
 }
 
 private fun takeWinningNumbers(): WinningLotto {
-    val winningNumbers = retryable { InputView.readWinningNumbers() }
-    val bonusNumber = retryable { InputView.readBonusNumber(winningNumbers) }
+    val winningNumbers = retryable {
+        InputView.showInstruction("\nPlease enter last week's winning numbers.")
+        InputView.readWinningNumbers()
+    }
+    val bonusNumber = retryable {
+        InputView.showInstruction("\nPlease enter the bonus number.")
+        InputView.readBonusNumber(winningNumbers)
+    }
     return WinningLotto(winningNumbers, bonusNumber)
 }
 
