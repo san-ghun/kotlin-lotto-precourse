@@ -28,8 +28,13 @@ class LottoResult {
     }
 
     companion object {
-        fun formatOutput(format: String, args: Any, locale: Locale = Locale.US): String {
-            return String.format(locale, format, args)
+        fun formatOutput(format: String, arg: Any, locale: Locale = Locale.US): String {
+            val validatedArg = when (arg) {
+                is Int -> arg
+                is Double -> arg
+                else -> throw IllegalArgumentException("[ERROR] Only Int or Double allowed")
+            }
+            return String.format(locale, format, validatedArg)
         }
     }
 }
