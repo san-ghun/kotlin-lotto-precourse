@@ -3,6 +3,7 @@ package lotto
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.assertThrows
 
 class LottoResultTest {
 
@@ -69,11 +70,9 @@ class LottoResultTest {
     fun `calculateProfit() - return total profit from lotto result`() {
         val result = LottoResult()
         val rank = Rank.FOURTH
-
-        var expected: Double
         var repeatCount = 0
 
-        expected = 0.0
+        var expected = 0.0
         repeat(repeatCount) { result.add(rank) }
         assertEquals(expected, result.calculateProfit())
 
@@ -81,5 +80,21 @@ class LottoResultTest {
         expected = 150_000.0
         repeat(repeatCount) { result.add(rank) }
         assertEquals(expected, result.calculateProfit())
+    }
+
+    @Test
+    fun `formatOutput() - only take Int or Double types as 'arg'`() {
+        LottoResult.formatOutput("%,d", 0)
+        LottoResult.formatOutput("%,d", 123)
+        LottoResult.formatOutput("%,.1f", 0.1)
+        LottoResult.formatOutput("%,.1f", 1.23)
+    }
+
+    @Test
+    fun `formatOutput() - throw exception when argument is not Int or Double type`() {
+        assertThrows<IllegalArgumentException> {
+            LottoResult.formatOutput("s", "some string")
+            LottoResult.formatOutput("c", 'a')
+        }
     }
 }
