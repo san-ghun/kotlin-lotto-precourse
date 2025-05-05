@@ -27,12 +27,13 @@ object InputView {
         return numbers.sorted()
     }
 
-    fun readBonusNumber(): Int {
+    fun readBonusNumber(winningNumbers: List<Int>): Int {
         val userInput = Console.readLine().trim()
         require(userInput.isNotBlank()) { "[ERROR] Invalid input - is blank, read bonus number" }
         val number = userInput.toIntOrNull()
             ?: throw IllegalArgumentException("[ERROR] Invalid input - is not int, read bonus number")
-        require(number in 1..45) { "[ERROR] Invalid input - numbers must be in the range from 1 to 45, read bonus number" }
+        require(number in 1..45) { "[ERROR] Invalid input - number must be in the range from 1 to 45, read bonus number" }
+        require(number !in winningNumbers) { "[ERROR] Invalid input - number should be separate number from winning numbers, read bonus number" }
         return number
     }
 }
