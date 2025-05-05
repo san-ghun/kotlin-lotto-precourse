@@ -27,4 +27,4 @@
     - profit rate
 - Exception
   - for invalid input data, 'IllegalArgumentException' and re-prompt from the step
-  - 
+  - error message must start with "[ERROR]"
