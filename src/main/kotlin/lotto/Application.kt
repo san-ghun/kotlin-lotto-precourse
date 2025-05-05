@@ -9,12 +9,12 @@ fun main() {
     OutputView.showTickets(lottoBundle)
 
     println("\nPlease enter the bonus number.")
-    val winningNumbers = InputView.readWinningNumbers()
+    val winningTicket = InputView.readWinningNumbers()
 
     println("\nPlease enter the bonus number.")
     val bonusNumber = InputView.readBonusNumber()
 
-    val machine = LottoMachine(lottoBundle, winningNumbers, bonusNumber)
+    val machine = LottoMachine(lottoBundle, winningTicket, bonusNumber)
 
 //    OutputView.showStatistics(machine)
     println("\nWinning Statistics")
