@@ -23,6 +23,7 @@ object InputView {
                 ?: throw IllegalArgumentException("[ERROR] Invalid input - there must be 6 numbers, read winning numbers")
         }
         require(numbers.distinct().size == 6) { "[ERROR] Invalid input - there must be 6 numbers, read winning numbers" }
+        require(numbers.all { it in 1..45 }) { "[ERROR] Invalid input - numbers must be in the range from 1 to 45, read winning numbers" }
         return numbers.sorted()
     }
 
