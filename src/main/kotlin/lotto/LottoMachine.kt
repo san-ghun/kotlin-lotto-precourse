@@ -27,6 +27,21 @@ class LottoMachine(
         }
     }
 
+    private fun calculatePrize(): Double {
+        var prize = 0.0
+        _winnerBoard.forEach { t, u ->
+            prize += t.prize * u
+        }
+        return prize
+    }
+
+    fun calculateReturnRate(): Double {
+        val totalPrize = calculatePrize()
+        val totalCost = lottoBundle.size * 1_000
+        val returnRate = totalPrize / totalCost * 100
+        return returnRate
+    }
+
     companion object {
         fun purchaseTickets(amount: Int): List<Lotto> {
             val howManyTickets = amount / 1_000
